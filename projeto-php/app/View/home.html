@@ -1,0 +1,52 @@
+<div id="home">
+    <div class="top">
+        <p class="subtitle"><strong>BETA - BLEEZ CHALLENGE</strong></p>
+        <div class="links">
+            <a class="link" href="?page=pokemon"><strong>NEW POKEMON</strong></a>
+            <a class="link" href="?page=about"><strong>ABOUT</strong></a>
+            <a class="link" href="https://github.com/ThalysonIzzatx2"><strong>GITHUB</strong></a>
+        </div>
+    </div>
+
+    <div class="products">
+        <p class="Gtitle"><strong>POKEDEX</strong></p>
+        <div class="c">
+        {% if pokemons %}   
+            {% for pokemon in pokemons %}
+                <div class="card">
+                    <div class="card-top">
+                        <p class="number">{{pokemon.num}}</p>
+                        <p class="name">{{pokemon.name}}</p>
+                        <p class="price">R${{pokemon.price}}</p>
+                    </div>
+                    <image src="{{pokemon.image}}" name="image" class="img"/> 
+                    <p title="{{pokemon.description}}" class="description">Description (mouse over for get description)</p>
+                    <div class="admin-panel">
+                        <button class="delete-btn"><a class="admin-links" href="?page=pokemon&action=delete&id={{pokemon.id}}">Delete</a></button>
+                        <button class="edit-btn"><a class="admin-links" href="?page=pokemon&id={{pokemon.id}}">Edit</a></button>
+                    </div>
+                </div>
+            {% endfor %}
+        {% else %}
+            <div class="card">
+                <div class="card-top">
+                    <p class="number">{{num}}</p>
+                    <p class="name">{{name}}</p>
+                    <p class="price">R${{price}}</p>
+                </div>
+                <image src="{{image}}" name="image" class="img"/> 
+                <p class="description">{{description}}</p>
+                <div class="admin-panel">
+                    <button class="delete-btn"><a class="admin-links" href="?page=pokemon&action=delete&id={{id}}">Delete</a></button>
+                    <button class="edit-btn"><a class="admin-links" href="?page=pokemon&id={{id}}">Edit</a></button>
+                </div>
+            </div>
+        {% endif %}
+            <div class="card">
+                <a href="?page=pokemon"><img src="https://img.icons8.com/pastel-glyph/64/000000/plus.png"/></a>
+            </div>
+        </div>
+        </div>
+    </div>
+
+</div>

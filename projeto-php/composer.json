@@ -1,0 +1,6 @@
+{
+    "name": "thalyson/pr",
+    "require": {
+        "twig/twig": "^3.0"
+    }
+}

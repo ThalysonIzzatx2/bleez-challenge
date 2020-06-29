@@ -1,0 +1,63 @@
+<div class="create">
+    <p class="Ntitle"><strong>New Pokemon</strong></p>
+    {% if name %}
+        <form action="?page=pokemon&action=update" method="post">
+            <div class="form">
+                <div class="edit-top">
+                    <div class="input-group">
+                        <label class="lbl">Name:</label>
+                        <input class="formitem" type="text" placeholder="Pokemon name" name="name" value="{{name}}" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label class="lbl">Image Link:</label>
+                        <input class="formitem" type="text" placeholder="https://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png" name="image" value="{{image}}" required>
+                    </div>    
+
+                </div>
+                <img class="img-edit" src="{{image}}" alt="{{name}} img"/>
+
+                <label class="lbl">Description:</label>
+                <textarea name="description" cols="60" rows="10">{{description}}</textarea>
+                <div id="subform">
+                    <label class="lbl">Price:</label>
+                    <input class="formnumber" type="number" placeholder="15" name="price" value="{{price}}" required>
+
+                    <label class="lbl">Number:</label>
+                    <input class="formnumber" type="number" placeholder="151" name="num" value="{{num}}" required maxlength="3">
+                </div>
+                    <input type="hidden" name="id" value="{{id}}">
+                <button class="btnform" type="submit">Salvar</button>
+            </div>
+        </form>
+    {% else %}
+        <form action="?page=pokemon&action=create" method="post">
+            <div class="form">
+                <div class="edit-top">
+                    <div class="input-group">
+                        <label class="lbl">Name:</label>
+                        <input class="formitem" type="text" placeholder="Pokemon name" name="name" value="" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label class="lbl">Image Link:</label>
+                        <input class="formitem" type="text" placeholder="https://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png" name="image" value="" required>    
+                    </div>
+                </div>
+
+                <label class="lbl">Description:</label>
+                <textarea name="description" cols="60" rows="10"></textarea>
+                <div id="subform">
+                    <label class="lbl">Price:</label>
+                    <input class="formnumber" type="number" placeholder="15" name="price" value="" required>
+
+                    <label class="lbl">Number:</label>
+                    <input class="formnumber" type="number" placeholder="151" name="num" value="" required maxlength="3">
+                </div>
+                <button class="btnform" type="submit">Salvar</button>
+            </div>
+        </form>
+
+    {% endif %}
+
+</div>
